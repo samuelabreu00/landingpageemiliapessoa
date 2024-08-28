@@ -1,0 +1,40 @@
+@import '../../../variables.scss';
+.sobre {
+    position: relative;
+    overflow: hidden;
+}
+
+.sobre img {
+    position: absolute;
+    z-index: -1;
+    top: 50%; /* Move o elemento para 50% do topo do contêiner pai */
+    left: 50%; /* Move o elemento para 50% da esquerda do contêiner pai */
+    transform: translate(-50%, -50%);
+}
+.container-sobre {
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 110px 24px;
+    gap: 200px;
+    transition: .3s;
+}
+@media screen and (max-width:992px) {
+    .sobre img {
+        display: none;
+    }
+
+    .container-sobre {
+        padding: 150px 24px;
+        gap: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+  .container-sobre {
+    padding: 9rem 24px 0 24px;
+  }
+}

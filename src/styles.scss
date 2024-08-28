@@ -1,0 +1,12 @@
+@import './variables.scss';
+@import './filson-font.scss';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Filson Pro', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}

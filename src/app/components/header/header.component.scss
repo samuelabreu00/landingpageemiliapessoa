@@ -1,0 +1,206 @@
+@import '../../../variables.scss';
+
+:host {
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 5;
+  border-radius: 35px;
+  transition: .3s;
+  &.shadow{
+    .img {
+      height: 70px !important;
+    }
+    button {
+     height: 40px;
+     width: 120px;
+     background-color: #fff;
+     color: #029a65;
+    }
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+  }
+}
+
+
+header {
+  background-color: $primary-color;
+}
+::ng-deep app-redirect-button a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+
+        width: 200px;
+        height: 60px;
+        background-color: #fff !important;
+        opacity: 1;
+        color: $primary-color !important;
+        border-radius: 15px;
+        font-weight: bold;
+        transition: .3s;
+
+}
+
+::ng-deep app-redirect-button a:hover {
+    transform: scale(1.02);
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    transition: .2s;
+}
+
+a:hover {
+    color: $secondary-color;
+}
+
+.container-header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: content-box;
+    margin: 0 auto;
+
+    max-width: 1440px;
+    padding: 1.5rem 24px;
+    transition: .1s;
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        img {
+            transition: .2s;
+        }
+    }
+
+    .navigation-area {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+
+        width: 100%;
+        padding-left: 2.5rem;
+
+        nav{
+            display: flex;
+            gap: 3rem;
+            a {
+                font-size: 1.2rem;
+                font-weight: 500;
+            }
+        }
+
+        .toggle-btn {
+            display: none;
+            cursor: pointer;
+        }
+    }
+
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        overflow: hidden;
+
+        top: 130px;
+        right: 2rem;
+
+        width: 300px;
+        height: 0;
+        background-color: $primary-color;
+        border-radius: 15px;
+        transition: height .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            flex: 1;
+            a {
+                text-align: center;
+                font-weight: 600;
+                width: 99%;
+                padding: 1.4rem;
+                // border: 1px solid #fff;
+                transition: .4s;
+            }
+
+        }
+
+        ::ng-deep app-redirect-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex: 1;
+
+            a{
+                width: 90%;
+
+            }
+        }
+    }
+
+    .dropdown-menu.open {
+        height: 260px;
+        box-shadow: 0px 0px 50px 19px rgba(0,0,0,0.2);
+        // animation: slideMenu .3s ease-out;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .navigation-area a,
+    .navigation-area ::ng-deep app-redirect-button {
+        display: none;
+
+    }
+
+    .navigation-area .toggle-btn {
+        display: block !important;
+    }
+
+    .container-header .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@keyframes slideMenu {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -10px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .container-header {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .container-header .logo img {
+        width: 140px;
+        height: 50px;
+    }
+
+    .container-header .dropdown-menu {
+        display: flex;
+        flex-direction: column;
+
+        margin: 0 auto;
+        top: 110px;
+        left: 0;
+        right: 0;
+    }
+}

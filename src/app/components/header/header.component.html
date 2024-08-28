@@ -1,0 +1,29 @@
+<header>
+    <div class="container-header">
+        <div class="logo">
+            <a href="#inicio"><img [ngSrc]="urlMainLogo" width="200" height="70" alt="" priority></a>
+        </div>
+
+        <aside class="navigation-area">
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#recomendacoes">Propostas</a>
+                <a href="#bandeiras">Bandeiras</a>
+            </nav>
+
+            <div class="toggle-btn" #toggleBtn>
+                <img [src]="iconMenu" alt="" #toggleBtnIcon>
+            </div>
+        </aside>
+
+        <div class="dropdown-menu" #dropdownMenu>
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#recomendacoes">Propostas</a>
+                <a href="#bandeiras">Bandeiras</a>
+            </nav>
+        </div>
+    </div>
+</header>
